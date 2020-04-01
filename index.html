@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>Fox Council</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
+        <style>
+            @import url(https://fonts.googleapis.com/css?family=Bungee);
+            html, body { width: 100%; height: 100%; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+            .text {
+                fill: none;
+                stroke-width: 3;
+                stroke-linejoin: round;
+                stroke-dasharray: 70 330;
+                stroke-dashoffset: 0;
+                -webkit-animation: stroke 6s infinite linear;
+                animation: stroke 6s infinite linear;
+            }
+            .text:nth-child(5n + 1) {
+                stroke: #F2385A;
+                -webkit-animation-delay: -1.2s;
+                animation-delay: -1.2s;
+            }
+            .text:nth-child(5n + 2) {
+                stroke: #F5A503;
+                -webkit-animation-delay: -2.4s;
+                animation-delay: -2.4s;
+            }
+            .text:nth-child(5n + 3) {
+                stroke: #E9F1DF;
+                -webkit-animation-delay: -3.6s;
+                animation-delay: -3.6s;
+            }
+            .text:nth-child(5n + 4) {
+                stroke: #56D9CD;
+                -webkit-animation-delay: -4.8s;
+                animation-delay: -4.8s;
+            }
+            .text:nth-child(5n + 5) {
+                stroke: #3AA1BF;
+                -webkit-animation-delay: -6s;
+                animation-delay: -6s;
+            }
+
+            @-webkit-keyframes stroke {
+                100% {
+                    stroke-dashoffset: -400;
+                }
+            }
+            @keyframes stroke {
+                100% {
+                    stroke-dashoffset: -400;
+                }
+            }
+            body {
+                background: #111;
+                background-size: .2em 100%;
+                font: 3em/1 Bungee, Impact;
+                margin: 0;
+            }
+
+            svg {
+                position: absolute;
+            }
+        </style>
+    </head>
+    <body>
+        <svg class="wtf" viewBox="0 0 600 300">
+            <!-- Symbol-->
+            <symbol id="s-text">
+                <text text-anchor="middle" x="50%" y="50%" dy=".35em">Fox Council</text>
+            </symbol>
+            <!-- Duplicate symbols-->
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+            <use class="text" xlink:href="#s-text"></use>
+        </svg>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js" integrity="sha256-qGOnfp7iY6DsnB55K7M+0PZjWCtzafRyJh33tgQJkMQ=" crossorigin="anonymous"></script>
+        <script>
+            (function() {
+                console.log('active');
+
+                var tl = new TimelineMax();
+
+                tl.to(".wtf", .5, {scale:0.7});
+                tl.to(".wtf", 1, {scale:10});
+                tl.to(".wtf", 2, {x:1500});
+                tl.to(".wtf", 2, {x:-1240});
+                tl.to(".wtf", .5, {rotation: 25});
+            })();
+        </script>
+    </body>
+</html>
